@@ -1,0 +1,89 @@
+.splash {
+    height: 100vh;
+    width: 100vw;
+    background: #0D1B2A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 800px;
+    font-weight: bold;
+    color: #00A8FF;
+    letter-spacing: 6px;
+    text-shadow:
+        0 0 10px #00A8FF,
+        0 0 30px #00A8FF,
+        0 0 60px #00A8FF;
+}
+
+/* TEXT GLITCH */
+
+.glitch-text {
+    animation: glitch 0.3s infinite;
+    font-size: 500px;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0)
+    }
+
+    20% {
+        transform: translate(-2px, 2px)
+    }
+
+    40% {
+        transform: translate(2px, -2px)
+    }
+
+    60% {
+        transform: translate(-1px, 1px)
+    }
+
+    80% {
+        transform: translate(1px, -1px)
+    }
+
+    100% {
+        transform: translate(0)
+    }
+}
+
+/* TV SCRATCH / NOISE */
+
+.glitch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    font-size: 500px;
+
+    background:
+        repeating-linear-gradient(0deg,
+            rgba(255, 255, 255, 0.03) 0px,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 3px);
+
+    animation: scan 6s linear infinite;
+}
+
+/* moving scanline */
+
+@keyframes scan {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
+}
